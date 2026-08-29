@@ -1,0 +1,51 @@
+name: affine_exact_canonical_nested_shift
+seed: 12345
+device: auto
+dtype: float64
+output_root: runs
+model:
+  name: affine_factor
+  d: 1
+  k: 1
+  exact_one_factor: true
+  T: 1.0
+  n_steps: 128
+  r: 0.03
+  rho: 0.0
+  gamma: 2.0
+  terminal_weight: 1.0
+  constraint: unconstrained
+  a0: 0.0
+  a1: 0.2
+  sigma: 0.2
+  kappa: 2.0
+  theta: 0.2
+  nu: 0.3
+  corr: 0.1
+  wealth_range:
+  - 0.3
+  - 3.0
+policy:
+  kind: analytic
+evaluation:
+  states: 128
+  continuations: 8192
+  continuation_batch: 256
+  graph_mode: ol
+  antithetic: true
+  state_seed: 12345
+  brownian_seed: 22345
+  holdout_continuations: 8192
+  holdout_continuation_batch: 256
+  holdout_brownian_seed: 1022348
+  z_estimator: nested_crn_ols
+  z_outer_paths: 512
+  z_inner_paths: 16
+  z_outer_pair_batch: 32
+  z_ridge_relative: 1.0e-12
+  z_brownian_seed: 722346
+  holdout_z_brownian_seed: 1722351
+recovery:
+  qp_tolerance: 1.0e-11
+  curvature_floor: 1.0e-12
+  barrier: false

@@ -1,0 +1,49 @@
+name: merton_short_smoke
+seed: 42
+device: auto
+dtype: float64
+output_root: runs
+model:
+  name: merton
+  d: 4
+  T: 1.5
+  n_steps: 6
+  r: 0.03
+  rho: 0.0
+  gamma: 2.0
+  terminal_weight: 1.0
+  constraint: orthant
+  consumption: false
+  wealth_range:
+  - 0.3
+  - 2.0
+  market_seed: 42
+policy:
+  kind: mlp
+  hidden:
+  - 32
+  - 32
+  activation: leaky_relu
+  feature_mode: raw
+training:
+  epochs: 5
+  batch_size: 64
+  learning_rate: 0.0005
+  grad_clip: 1.0
+  print_every: 1
+evaluation:
+  states: 4
+  continuations: 128
+  continuation_batch: 32
+  graph_mode: ol
+  antithetic: true
+  state_seed: 1001
+  brownian_seed: 2001
+  holdout_continuations: 128
+  holdout_continuation_batch: 32
+  holdout_brownian_seed: 1002004
+recovery:
+  qp_tolerance: 1.0e-10
+  curvature_floor: 1.0e-10
+  barrier: true
+  barrier_epsilon: 1.0e-05

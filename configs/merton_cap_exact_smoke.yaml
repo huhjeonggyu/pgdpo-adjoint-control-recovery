@@ -1,0 +1,48 @@
+name: merton_cap_exact_smoke
+seed: 12346
+device: auto
+dtype: float64
+output_root: runs
+model:
+  name: merton
+  d: 2
+  T: 0.75
+  n_steps: 24
+  r: 0.03
+  rho: 0.1
+  gamma: 2.0
+  terminal_weight: 1.0
+  constraint: simplex
+  leverage_cap: 1.0
+  consumption: true
+  consumption_rate_min: 1.0e-08
+  consumption_rate_max: 0.7
+  wealth_range:
+  - 0.7
+  - 1.3
+  alpha:
+  - 0.06
+  - 0.03
+  covariance:
+  - - 0.04
+    - 0.01
+  - - 0.01
+    - 0.05
+policy:
+  kind: analytic
+evaluation:
+  states: 4
+  continuations: 1024
+  continuation_batch: 128
+  graph_mode: ol
+  antithetic: true
+  state_seed: 12346
+  brownian_seed: 22346
+  holdout_continuations: 1024
+  holdout_continuation_batch: 128
+  holdout_brownian_seed: 1022349
+recovery:
+  qp_tolerance: 1.0e-10
+  curvature_floor: 1.0e-12
+  barrier: true
+  barrier_epsilon: 3.0e-06

@@ -1,0 +1,26 @@
+Exact-policy predictable-return zeta Monte Carlo budget sweep
+
+From the repository root:
+
+Full audit:
+  PYTHONPATH=src python scripts/zeta_budget_sweep.py \
+    --budgets 256x8,512x16,1024x32 \
+    --replicates 3
+
+Quick smoke test:
+  PYTHONPATH=src python scripts/zeta_budget_sweep.py \
+    --runs canonical \
+    --budgets 64x4 \
+    --replicates 1 \
+    --states 8
+
+Outputs:
+  paper/zeta_budget_sweep/summary.csv
+  paper/zeta_budget_sweep/replicates.csv
+  paper/zeta_budget_sweep/pointwise.csv
+  paper/zeta_budget_sweep/summary.json
+
+The audit does not retrain DPO and does not re-harvest lambda/P. It conditions on
+saved lambda/P and re-estimates only the Brownian projection and shifted wealth
+row. The reported fixed-anchor SNR conditions on saved P, so it is not identical
+to a full-pipeline SNR that also includes P-anchor uncertainty.
