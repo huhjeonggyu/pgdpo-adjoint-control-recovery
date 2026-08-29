@@ -1,0 +1,58 @@
+seed: 42
+device: auto
+dtype: float64
+model:
+  name: merton
+  d: 100
+  T: 1.0
+  n_steps: 12
+  r: 0.03
+  rho: 0.1
+  gamma: 2.0
+  terminal_weight: 1.0
+  constraint: simplex
+  leverage_cap: 1.0
+  consumption: true
+  consumption_rate_min: 1.0e-08
+  consumption_rate_max: 0.7
+  wealth_range:
+  - 0.3
+  - 3.0
+  market_mode: legacy_cap
+  market_seed: 42
+policy:
+  kind: mlp
+  hidden:
+  - 200
+  - 200
+  activation: leaky_relu
+  checkpoint_strict: true
+  architecture: legacy_merton_cap
+training:
+  force: false
+evaluation:
+  states: 128
+  continuations: 8192
+  continuation_batch: 128
+  graph_mode: ol
+  antithetic: true
+  state_seed: 12345
+  brownian_seed: 22345
+  holdout_continuations: 8192
+  holdout_continuation_batch: 128
+  holdout_brownian_seed: 1022348
+  z_estimator: nested_crn_ols
+  z_outer_paths: 1024
+  z_inner_paths: 8
+  z_outer_pair_batch: 32
+  z_ridge_relative: 1.0e-12
+  z_brownian_seed: 722346
+  holdout_z_brownian_seed: 1722351
+recovery:
+  qp_tolerance: 1.0e-10
+  curvature_floor: 1.0e-10
+  barrier: true
+  barrier_epsilon: 3.0e-06
+  barrier_tolerance: 1.0e-08
+  barrier_max_iterations: 120
+  switching_band: 0.05

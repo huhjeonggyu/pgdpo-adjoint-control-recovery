@@ -1,0 +1,27 @@
+output_root: runs_paper_smoke
+jobs:
+- name: smoke_merton_exact
+  groups:
+  - smoke
+  stage: pipeline
+  config: ../configs/merton_exact_smoke.yaml
+- name: smoke_affine_exact
+  groups:
+  - smoke
+  stage: pipeline
+  config: ../configs/affine_exact_smoke.yaml
+- name: smoke_merton_short
+  groups:
+  - smoke
+  stage: pipeline
+  config: ../configs/merton_short_smoke.yaml
+- name: smoke_merton_cap
+  groups:
+  - smoke
+  stage: pipeline
+  config: ../configs/merton_cap_smoke.yaml
+- name: smoke_factor_constrained
+  groups:
+  - smoke
+  stage: pipeline
+  config: ../configs/factor_constrained_smoke.yaml

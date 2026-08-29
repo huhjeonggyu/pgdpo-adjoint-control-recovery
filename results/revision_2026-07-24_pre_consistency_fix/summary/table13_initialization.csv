@@ -1,0 +1,4 @@
+model,N,exact_QP_uses_initialization,exact_max_difference,PGD_mean_difference,PGD_max_difference,PGD_iterations
+Liu--Kim--Omberg,64,False,0.0,6.677537952652509e-16,1.799977700714576e-15,2000
+Merton cap,64,False,0.0,6.19162980117973e-16,1.2933582183579877e-15,2000
+Liu--Kim--Omberg cap,32,False,0.0,5.486965989457225e-16,1.2782711059909629e-15,2000

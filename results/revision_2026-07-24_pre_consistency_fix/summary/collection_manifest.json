@@ -1,0 +1,19 @@
+{
+  "all_runs": "summary/all_runs.csv",
+  "graph_ablation": "summary/appendix_graph_ablation.csv",
+  "table12": "summary/table12_lko_full_shift.csv",
+  "table13": "summary/table13_initialization.csv",
+  "table15": "summary/table15_barrier_epsilon.csv",
+  "table16_internal": "summary/table16_internal_pgdpo.csv",
+  "table17": "summary/table17_timing.csv",
+  "table3": "summary/table3_noshort.csv",
+  "table4": "summary/table4_adjoint_validation.csv",
+  "table5": "summary/table5_training_budget_summary.csv",
+  "table5_by_seed": "summary/table5_training_budget_by_seed.csv",
+  "table6": "summary/table6_consumption_cap.csv",
+  "table7": "summary/table7_predictable_return.csv",
+  "table8": "summary/table8_barrier_audit.csv",
+  "table9": "summary/table9_switching_aggregate.csv",
+  "table9_by_split": "summary/table9_switching_by_split.csv",
+  "z_estimator_ablation": "summary/appendix_z_estimator_ablation.csv"
+}

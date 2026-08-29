@@ -1,0 +1,599 @@
+output_root: runs_paper_full_shift
+catalog: paper/legacy_catalog.json
+jobs:
+- name: t3_merton_short_d10
+  groups:
+  - section5
+  - table3
+  - paper
+  stage: pipeline
+  config: configs/t3_merton_short_d10.yaml
+  checkpoint_alias: merton_short_d10_e500
+  tags:
+    d: 10
+    model_label: Merton short
+    table: '3'
+- name: t3_merton_short_d100
+  groups:
+  - section5
+  - table3
+  - paper
+  stage: pipeline
+  config: configs/t3_merton_short_d100.yaml
+  checkpoint_alias: merton_short_d100_e500
+  tags:
+    d: 100
+    model_label: Merton short
+    table: '3'
+- name: t4_merton_exact_d100
+  groups:
+  - exact
+  - section5
+  - table4
+  - paper
+  stage: pipeline
+  config: configs/t4_merton_exact_d100.yaml
+  tags:
+    d: 100
+    estimator: Exact-policy OL-BPTT
+    estimator_ablation: true
+    model_label: Merton exact
+    table: '4'
+- name: t4_merton_learned_d100
+  groups:
+  - section5
+  - table4
+  - paper
+  stage: pipeline
+  config: configs/t4_merton_learned_d100.yaml
+  checkpoint_alias: merton_short_d100_e500
+  tags:
+    d: 100
+    estimator: Learned-policy OL-BPTT
+    table: '4'
+- name: t5_budget_seed1_e250
+  groups:
+  - section5
+  - appendix
+  - table5
+  - table14
+  - paper
+  stage: pipeline
+  config: configs/t5_budget_seed1_e250.yaml
+  checkpoint_alias: merton_budget_seed1_e250
+  market_snapshot_alias: merton_budget_market
+  tags:
+    appendix_table: '14'
+    d: 100
+    epoch: 250
+    seed: 1
+    table: '5'
+- name: t5_budget_seed1_e500
+  groups:
+  - section5
+  - appendix
+  - table5
+  - table14
+  - paper
+  stage: pipeline
+  config: configs/t5_budget_seed1_e500.yaml
+  checkpoint_alias: merton_budget_seed1_e500
+  market_snapshot_alias: merton_budget_market
+  tags:
+    appendix_table: '14'
+    d: 100
+    epoch: 500
+    seed: 1
+    table: '5'
+- name: t5_budget_seed1_e1000
+  groups:
+  - section5
+  - appendix
+  - table5
+  - table14
+  - paper
+  stage: pipeline
+  config: configs/t5_budget_seed1_e1000.yaml
+  checkpoint_alias: merton_budget_seed1_e1000
+  market_snapshot_alias: merton_budget_market
+  tags:
+    appendix_table: '14'
+    d: 100
+    epoch: 1000
+    seed: 1
+    table: '5'
+- name: t5_budget_seed2_e250
+  groups:
+  - section5
+  - appendix
+  - table5
+  - table14
+  - paper
+  stage: pipeline
+  config: configs/t5_budget_seed2_e250.yaml
+  checkpoint_alias: merton_budget_seed2_e250
+  market_snapshot_alias: merton_budget_market
+  tags:
+    appendix_table: '14'
+    d: 100
+    epoch: 250
+    seed: 2
+    table: '5'
+- name: t5_budget_seed2_e500
+  groups:
+  - section5
+  - appendix
+  - table5
+  - table14
+  - paper
+  stage: pipeline
+  config: configs/t5_budget_seed2_e500.yaml
+  checkpoint_alias: merton_budget_seed2_e500
+  market_snapshot_alias: merton_budget_market
+  tags:
+    appendix_table: '14'
+    d: 100
+    epoch: 500
+    seed: 2
+    table: '5'
+- name: t5_budget_seed2_e1000
+  groups:
+  - section5
+  - appendix
+  - table5
+  - table14
+  - paper
+  stage: pipeline
+  config: configs/t5_budget_seed2_e1000.yaml
+  checkpoint_alias: merton_budget_seed2_e1000
+  market_snapshot_alias: merton_budget_market
+  tags:
+    appendix_table: '14'
+    d: 100
+    epoch: 1000
+    seed: 2
+    table: '5'
+- name: t5_budget_seed3_e250
+  groups:
+  - section5
+  - appendix
+  - table5
+  - table14
+  - paper
+  stage: pipeline
+  config: configs/t5_budget_seed3_e250.yaml
+  checkpoint_alias: merton_budget_seed3_e250
+  market_snapshot_alias: merton_budget_market
+  tags:
+    appendix_table: '14'
+    d: 100
+    epoch: 250
+    seed: 3
+    table: '5'
+- name: t5_budget_seed3_e500
+  groups:
+  - section5
+  - appendix
+  - table5
+  - table14
+  - paper
+  stage: pipeline
+  config: configs/t5_budget_seed3_e500.yaml
+  checkpoint_alias: merton_budget_seed3_e500
+  market_snapshot_alias: merton_budget_market
+  tags:
+    appendix_table: '14'
+    d: 100
+    epoch: 500
+    seed: 3
+    table: '5'
+- name: t5_budget_seed3_e1000
+  groups:
+  - section5
+  - appendix
+  - table5
+  - table14
+  - paper
+  stage: pipeline
+  config: configs/t5_budget_seed3_e1000.yaml
+  checkpoint_alias: merton_budget_seed3_e1000
+  market_snapshot_alias: merton_budget_market
+  tags:
+    appendix_table: '14'
+    d: 100
+    epoch: 1000
+    seed: 3
+    table: '5'
+- name: t6_merton_cap_d2
+  groups:
+  - section5
+  - table6
+  - paper
+  stage: pipeline
+  config: configs/t6_merton_cap_d2.yaml
+  checkpoint_alias: merton_cap_d2_e500
+  tags:
+    d: 2
+    model_label: Merton cap
+    row_type: learned
+    table: '6'
+- name: t6_merton_cap_d10
+  groups:
+  - section5
+  - table6
+  - paper
+  stage: pipeline
+  config: configs/t6_merton_cap_d10.yaml
+  checkpoint_alias: merton_cap_d10_e500
+  tags:
+    d: 10
+    model_label: Merton cap
+    row_type: learned
+    table: '6'
+- name: t6_merton_cap_d100
+  groups:
+  - section5
+  - table6
+  - paper
+  stage: pipeline
+  config: configs/t6_merton_cap_d100.yaml
+  checkpoint_alias: merton_cap_d100_e500
+  tags:
+    d: 100
+    model_label: Merton cap
+    row_type: learned
+    table: '6'
+- name: t6_merton_cap_d100_exact
+  groups:
+  - exact
+  - section5
+  - table6
+  - paper
+  stage: pipeline
+  config: configs/t6_merton_cap_d100_exact.yaml
+  tags:
+    d: 100
+    estimator_ablation: true
+    model_label: Merton cap exact
+    row_type: exact_policy
+    table: '6'
+- name: t7_affine_canonical
+  groups:
+  - exact
+  - section5
+  - table7
+  - paper
+  stage: pipeline
+  config: configs/t7_affine_canonical.yaml
+  tags:
+    calibration: Canonical
+    estimator_ablation: true
+    model_label: Affine exact canonical
+    table: '7'
+- name: t7_affine_hedging
+  groups:
+  - exact
+  - section5
+  - table7
+  - paper
+  stage: pipeline
+  config: configs/t7_affine_hedging.yaml
+  tags:
+    calibration: Hedging-relevant
+    model_label: Affine exact hedging
+    table: '7'
+- name: t8_merton_cap_iid
+  groups:
+  - section5
+  - table8
+  - table9
+  - paper
+  stage: pipeline
+  config: configs/t8_merton_cap_iid.yaml
+  checkpoint_alias: merton_cap_d100_e500
+  tags:
+    d: 100
+    model_label: Merton cap
+    split: iid
+    table: '8'
+- name: t8_merton_cap_wealth_edge
+  groups:
+  - section5
+  - table8
+  - table9
+  - paper
+  stage: pipeline
+  config: configs/t8_merton_cap_wealth_edge.yaml
+  checkpoint_alias: merton_cap_d100_e500
+  tags:
+    d: 100
+    model_label: Merton cap
+    split: wealth_edge
+    table: '8'
+- name: t8_merton_cap_stress
+  groups:
+  - section5
+  - table8
+  - table9
+  - paper
+  stage: pipeline
+  config: configs/t8_merton_cap_stress.yaml
+  checkpoint_alias: merton_cap_d100_e500
+  tags:
+    d: 100
+    model_label: Merton cap
+    split: stress
+    table: '8'
+- name: t8_lko_cap_iid
+  groups:
+  - section5
+  - table8
+  - table9
+  - paper
+  stage: pipeline
+  config: configs/t8_lko_cap_iid.yaml
+  checkpoint_alias: lko_cap_d100_e500
+  tags:
+    d: 100
+    model_label: Liu--Kim--Omberg cap
+    split: iid
+    table: '8'
+- name: t8_lko_cap_wealth_edge
+  groups:
+  - section5
+  - table8
+  - table9
+  - paper
+  stage: pipeline
+  config: configs/t8_lko_cap_wealth_edge.yaml
+  checkpoint_alias: lko_cap_d100_e500
+  tags:
+    d: 100
+    model_label: Liu--Kim--Omberg cap
+    split: wealth_edge
+    table: '8'
+- name: t8_lko_cap_factor_edge
+  groups:
+  - section5
+  - table8
+  - table9
+  - paper
+  stage: pipeline
+  config: configs/t8_lko_cap_factor_edge.yaml
+  checkpoint_alias: lko_cap_d100_e500
+  tags:
+    d: 100
+    model_label: Liu--Kim--Omberg cap
+    split: factor_edge
+    table: '8'
+- name: t8_lko_cap_stress
+  groups:
+  - section5
+  - table8
+  - table9
+  - paper
+  stage: pipeline
+  config: configs/t8_lko_cap_stress.yaml
+  checkpoint_alias: lko_cap_d100_e500
+  tags:
+    d: 100
+    model_label: Liu--Kim--Omberg cap
+    split: stress
+    table: '8'
+- name: t12_lko_short_d10
+  groups:
+  - appendix
+  - table12
+  - paper
+  stage: pipeline
+  config: configs/t12_lko_short_d10.yaml
+  checkpoint_alias: lko_short_d10_e500
+  tags:
+    d: 10
+    model_label: Liu--Kim--Omberg factor
+    table: '12'
+- name: t12_lko_short_d50
+  groups:
+  - appendix
+  - table12
+  - paper
+  stage: pipeline
+  config: configs/t12_lko_short_d50.yaml
+  checkpoint_alias: lko_short_d50_e500
+  tags:
+    d: 50
+    model_label: Liu--Kim--Omberg factor
+    table: '12'
+- name: t12_lko_short_d100
+  groups:
+  - appendix
+  - table12
+  - paper
+  stage: pipeline
+  config: configs/t12_lko_short_d100.yaml
+  checkpoint_alias: lko_short_d100_e500
+  tags:
+    d: 100
+    model_label: Liu--Kim--Omberg factor
+    table: '12'
+- name: app_graph_lko_d100_cl
+  groups:
+  - appendix
+  - graph_ablation
+  stage: harvest
+  config: configs/app_graph_lko_d100_cl.yaml
+  checkpoint_alias: lko_short_d100_e500
+  tags:
+    audit: graph_ablation
+    compare_to: t12_lko_short_d100
+    graph: cl
+- name: app_graph_lko_d100_compare
+  groups:
+  - appendix
+  - graph_ablation
+  - paper
+  stage: graph_compare
+  reuse_from: t12_lko_short_d100
+  tags:
+    audit: graph_ablation
+    compare_to: app_graph_lko_d100_cl
+    model_label: Liu--Kim--Omberg factor
+- name: t13_init_lko_short_d100
+  groups:
+  - appendix
+  - table13
+  - paper
+  stage: init_audit
+  config: configs/t13_init_lko_short_d100.yaml
+  reuse_from: t12_lko_short_d100
+  tags:
+    audit_iterations: 2000
+    audit_states: 64
+    model_label: Liu--Kim--Omberg
+    table: '13'
+- name: t13_init_merton_cap_d100
+  groups:
+  - appendix
+  - table13
+  - paper
+  stage: init_audit
+  config: configs/t13_init_merton_cap_d100.yaml
+  reuse_from: t6_merton_cap_d100
+  tags:
+    audit_iterations: 2000
+    audit_states: 64
+    model_label: Merton cap
+    table: '13'
+- name: t13_init_lko_cap_d100
+  groups:
+  - appendix
+  - table13
+  - paper
+  stage: init_audit
+  config: configs/t13_init_lko_cap_d100.yaml
+  reuse_from: t8_lko_cap_iid
+  tags:
+    audit_iterations: 2000
+    audit_states: 32
+    model_label: Liu--Kim--Omberg cap
+    table: '13'
+- name: t15_merton_eps_1em05
+  groups:
+  - appendix
+  - table15
+  - paper
+  stage: recover
+  config: configs/t15_merton_eps_1em05.yaml
+  reuse_from: t6_merton_cap_d100
+  tags:
+    epsilon: 1.0e-05
+    model_label: Merton cap
+    table: '15'
+- name: t15_merton_eps_3em06
+  groups:
+  - appendix
+  - table15
+  - paper
+  stage: recover
+  config: configs/t15_merton_eps_3em06.yaml
+  reuse_from: t6_merton_cap_d100
+  tags:
+    epsilon: 3.0e-06
+    model_label: Merton cap
+    table: '15'
+- name: t15_merton_eps_1em06
+  groups:
+  - appendix
+  - table15
+  - paper
+  stage: recover
+  config: configs/t15_merton_eps_1em06.yaml
+  reuse_from: t6_merton_cap_d100
+  tags:
+    epsilon: 1.0e-06
+    model_label: Merton cap
+    table: '15'
+- name: t15_lko_eps_1em05
+  groups:
+  - appendix
+  - table15
+  - paper
+  stage: recover
+  config: configs/t15_lko_eps_1em05.yaml
+  reuse_from: t8_lko_cap_iid
+  tags:
+    epsilon: 1.0e-05
+    model_label: Liu--Kim--Omberg cap
+    table: '15'
+- name: t15_lko_eps_3em06
+  groups:
+  - appendix
+  - table15
+  - paper
+  stage: recover
+  config: configs/t15_lko_eps_3em06.yaml
+  reuse_from: t8_lko_cap_iid
+  tags:
+    epsilon: 3.0e-06
+    model_label: Liu--Kim--Omberg cap
+    table: '15'
+- name: t15_lko_eps_1em06
+  groups:
+  - appendix
+  - table15
+  - paper
+  stage: recover
+  config: configs/t15_lko_eps_1em06.yaml
+  reuse_from: t8_lko_cap_iid
+  tags:
+    epsilon: 1.0e-06
+    model_label: Liu--Kim--Omberg cap
+    table: '15'
+- name: t17_affine_d100_k1
+  groups:
+  - appendix
+  - table16
+  - table17
+  - paper
+  stage: pipeline
+  config: configs/t17_affine_d100_k1.yaml
+  checkpoint_alias: affine_old_d100_k1
+  tags:
+    appendix_table: '16'
+    d: 100
+    historical_dpo_minutes: 1.883
+    k: 1
+    model_label: Supplementary affine factor
+    table: '17'
+- name: t17_affine_d100_k3
+  groups:
+  - appendix
+  - table16
+  - table17
+  - paper
+  stage: pipeline
+  config: configs/t17_affine_d100_k3.yaml
+  checkpoint_alias: affine_old_d100_k3
+  tags:
+    appendix_table: '16'
+    d: 100
+    historical_dpo_minutes: 2.225
+    k: 3
+    model_label: Supplementary affine factor
+    table: '17'
+- name: t17_affine_d100_k5
+  groups:
+  - appendix
+  - table16
+  - table17
+  - paper
+  stage: pipeline
+  config: configs/t17_affine_d100_k5.yaml
+  checkpoint_alias: affine_old_d100_k5
+  tags:
+    appendix_table: '16'
+    d: 100
+    historical_dpo_minutes: 2.2
+    k: 5
+    model_label: Supplementary affine factor
+    table: '17'
